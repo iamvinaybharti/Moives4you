@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+            <div class="container">
+
+                <div style="background-color:black;color:white;padding:5px;">
+                    <h1><b>Checkout Details</b></h1>
+                </div>
+
+
+                <table class="table table-dark">
+                  <thead>
+                    <tr>
+                      <th scope="col">Sections</th>
+                      <th scope="col">Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Payment Mode</th>
+                      <td>On Venue</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Reference No.</th>
+                      <td>SBZ{{ rand }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Movie</th>
+                      <td>{{form.movie}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Name</th>
+                      <td>{{form.name}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Number</th>
+                      <td>{{form.number}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Email</th>
+                      <td>{{form.email}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Total Seat</th>
+                      <td>{{form.totalseat}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Seat</th>
+                      <td>{{form.seattype}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Date</th>
+                      <td>{{form.date}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Time</th>
+                      <td>{{form.time}}</td>
+                    </tr>
+                  </tbody>
+
+            </table>
+                <a href="\" class="btn btn-primary">Go To Home</a>
+
+            </div>
+
+
+
+{% endblock %}

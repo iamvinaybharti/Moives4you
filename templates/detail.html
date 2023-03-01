@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+        <br><br>
+        <h1 align="center"><b>{{movie.moviename}}</b></h1><br>
+
+
+
+        <div class="container" align="center">
+            <div class="card" style="width: 18rem;">
+              <img src="{{movie.image.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <!--<p class="card-text">{{movie.description}}</p>-->
+              </div>
+              <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><a href="{% url 'book'%}" class="btn btn-primary">Book Now</a></li>
+                <li class="list-group-item">Rs. {{movie.pprice}}</li>
+                <li class="list-group-item">{{movie.last_date}}</li>
+                <li class="list-group-item"><b>{{movie.venuname}}</b></li>
+
+              </ul>
+            </div>
+        </div>
+
+
+        <div class="card" align="center">
+              <div class="card-header">
+                    <b>Description</b>
+                  </div>
+                  <div class="card-body">
+                    <h3 class="card-title">{{movie.moviename}}</h3>
+                    <p class="card-text">{{movie.description}}</p>
+                    <a href="\" class="btn btn-primary">Go Back</a>
+                </div>
+        </div>
+
+{% endblock %}

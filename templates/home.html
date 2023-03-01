@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+
+
+
+                <h2 style="text-align:center;">Top Movies</h2>
+            <div class="card-group">
+                  <div class="card">
+                    <img src="{% static 'Saaho.jpg' %}" class="card-img-top" height="500" width="150" alt="...">
+                    <div class="card-body">
+                    </div>
+                  </div>
+                  <div class="card">
+                    <img src="{% static 'kabir.jpg' %}" class="card-img-top" height="500" width="150" alt="...">
+                    <div class="card-body">
+                    </div>
+                  </div>
+                  <div class="card">
+                    <img src="{% static 'batla.jpg' %}" class="card-img-top" height="500" width="150" alt="...">
+                    <div class="card-body">
+                    </div>
+                  </div>
+            </div>
+
+
+
+
+
+
+
+				<table class="table table-striped">
+                      <thead>
+                        <tr>
+
+                            <th scope="col">Movie Name</th>
+                            <th scope="col">Poster</th>
+                          <th scope="col">Date</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Venue</th>
+                          <th scope="col">Booking</th>
+
+                        </tr>
+                      </thead>
+                    {% for m in movie.all%}
+                      <tbody>
+
+                        <tr>
+
+                          <td>{{ m.moviename }}</td>
+                            <td><img src="{{ m.image.url }}" height="100" width="120"/></td>
+
+                          <td>{{ m.last_date }}</td>
+                          <td>Rs. {{ m.pprice }}</td>
+                          <td>{{ m.venuname }}</td>
+                          <td><a href="{% url 'detail' m.id %}" class="btn btn-primary">Book</a></td>
+
+                        </tr>
+
+                      </tbody>
+                    {% endfor %}
+                </table>
+
+{% endblock %}
